@@ -1,4 +1,4 @@
-const { openBrowser, scrollDown, goto, click, $, closeBrowser, into, textBox, write, dropDown, select, evaluate, button, waitForEvents, waitFor } = require('taiko');
+const { openBrowser, scrollDown, goto, click, $, closeBrowser, into, textBox, write, dropDown, evaluate, button, waitFor } = require('taiko');
 (async () => {
     try {
 			await openBrowser({ headless: false });
