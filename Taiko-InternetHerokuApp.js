@@ -5,8 +5,9 @@ const { openBrowser, goto, clearHighlights, tableCell, press, click, below, clos
         await openBrowser({ headless: false });
         
         //Basic authentication
-        //await goto("https://the-internet.herokuapp.com/basic_auth");
-        //await goto("the-internet.herokuapp.com/basic_auth");
+        await prompt("Username", async () => await accept("admin")); 
+        await prompt("Password", async () => await accept("admin")); 
+        await goto("https://the-internet.herokuapp.com/basic_auth",{headers:{'Authorization':'Basic YWRtaW46YWRtaW4='}});
         
         //Highlight different elements in a table
         await goto("https://the-internet.herokuapp.com/challenging_dom");
