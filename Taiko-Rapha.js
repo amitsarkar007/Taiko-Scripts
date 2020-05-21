@@ -24,7 +24,7 @@ const { openBrowser, scrollDown, goto, click, $, closeBrowser, into, textBox, wr
 			await click("Brevet Jersey");
 
 			//Select the size of the jersey and add it to basket
-			await dropDown({name:'size-selector'}).select('XX-Large')
+			await dropDown({name:'size-selector'}).select('XX-Large');
 			await click('Add to Basket');
 
 			//Go to the basket and checkout as a guest
