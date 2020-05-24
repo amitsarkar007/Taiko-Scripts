@@ -1,7 +1,7 @@
 const { openBrowser, scrollDown, goto, click, $, closeBrowser, into, textBox, write, dropDown, evaluate, button, waitFor } = require('taiko');
 (async () => {
     try {
-			//Open Browser and navigate to the page
+		 	//Open Browser and navigate to the page
 			await openBrowser({ headless: false });
 			await goto("https://www.rapha.cc/gb/en/");
 			
