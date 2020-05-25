@@ -55,11 +55,13 @@ const { openBrowser, goto, clearHighlights, tableCell, press, click, below, clos
         await hover(image("User Avatar",toRightOf(image("User Avatar"))));
         await hover(image("User Avatar",toRightOf(image("User Avatar",toRightOf(image("User Avatar"))))));
 
-        //Move the slider
+        //Move the slider 
+        //Issue raised - https://github.com/getgauge/taiko/issues/1280
         //await goto("https://the-internet.herokuapp.com/horizontal_slider");
         //await range
 
-        //Open and close a new Tab
+        //Open and close a new Tab 
+        //Issue raised - https://github.com/getgauge/taiko/issues/1285
         await goto("https://the-internet.herokuapp.com/windows");
         await click("Click Here");
         await closeTab();
@@ -83,7 +85,6 @@ const { openBrowser, goto, clearHighlights, tableCell, press, click, below, clos
         await highlight(tableCell({class:'dues'}), below(text("$100.00")));
         await highlight(tableCell({class:'email'}));
         await clearHighlights();
-
     } catch (error) {
         console.error(error);
     } finally {
