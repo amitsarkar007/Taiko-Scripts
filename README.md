@@ -2,11 +2,12 @@
 
 Using [Taiko](https://github.com/getgauge/taiko) for user journey automation.
 
-## Platform tested on
+## Software needed for script execution
 
-* Microsoft Windows 10
-* [Microsoft Visual Studio Code](https://code.visualstudio.com/Download)
-* [Node.js](https://nodejs.org/en/download/)
+* Operating System - **Microsoft Windows 10**
+* IDE - **[Microsoft Visual Studio Code](https://code.visualstudio.com/Download)**
+* JavaScript runtime - **[Node.js](https://nodejs.org/en/download/)**
+* Browser - **[Chromium](https://github.com/chromium/chromium)** (downloaded during installation of Taiko)
 
 ## Programming language used
 
