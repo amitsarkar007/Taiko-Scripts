@@ -2,18 +2,16 @@
 // Performance audit of a website with Lighthouse
 
 const { openBrowser, goto, currentURL, closeBrowser, client } = require('taiko');
-// const path = require('path.win32'); 
-// Need to make to path work
-// import lighthouse from '/node_modules/lighthouse'; 
-// Need to make import work
+const lighthouse = require('lighthouse'); 
 const config = require('lighthouse/lighthouse-core/config/lr-desktop-config.js');
 const ReportGenerator = require('lighthouse/lighthouse-core/report/report-generator');
 const fs = require('fs');
+
 (async () => {
   try {
       //Open Browser and navigate to the page
       await openBrowser({ headless: false });
-      await goto('taiko.dev');
+      await goto('bbc.co.uk');
       let url = await currentURL();
       let port = await client()
               .webSocketUrl.split('/devtools/')[0]
