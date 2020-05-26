@@ -23,11 +23,15 @@ Using [Taiko](https://github.com/getgauge/taiko) for user journey automation.
     ```
 
 ## How to execute
-Execute the code by typing in your terminal
-```
-taiko <filename>
-```
 
+* Type the following in your terminal if you are executing the code from the **folder in which the script exists**
+    ```
+    taiko <filename>
+    ```
+* Type the following in your terminal if you are executing the code from the **folder in which the script doesn't exist**
+    ```
+    taiko <full file path with filename>
+    ```
 ## Code execution demo on YouTube
 * [Rapha.cc](https://www.youtube.com/watch?v=0ErzwZyZDgY) - _Taiko-Rapha.js_
 * [BT.com](https://www.youtube.com/watch?v=-orYOGBYRQc) - _Taiko-BT.js_
