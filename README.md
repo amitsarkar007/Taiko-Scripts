@@ -7,17 +7,18 @@ Using [Taiko](https://github.com/getgauge/taiko) for user journey automation.
 * Microsoft Windows 10
 * [Microsoft Visual Studio Code](https://code.visualstudio.com/Download)
 * [Node.js](https://nodejs.org/en/download/)
+
 ## Programming language used
 
 * [JavaScript (JS)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-## Node Libraries needed for execution
+## Node package needed for script execution
 
-* **Taiko** - Install globally on your machine using the code
+* [Taiko](https://www.npmjs.com/package/taiko) - Install globally on your machine using the code
     ```
     npm install -g taiko
     ```    
-* **Lighthouse** - Install globally on your machine using the code
+* [Lighthouse](https://www.npmjs.com/package/lighthouse) - Install globally on your machine using the code
     ```
     npm install -g lighthouse
     ```
