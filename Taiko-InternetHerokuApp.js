@@ -20,6 +20,7 @@ const { openBrowser, goto, clearHighlights, tableCell, press, click, below, clos
         await dropDown({id:"dropdown"}).select("Option 2");
 
         //Drag and drop an element from one location to another
+        // Issue - https://github.com/getgauge/taiko/issues/279
         //await goto("https://the-internet.herokuapp.com/drag_and_drop");
         //await dragAndDrop($(`#column-a`), into($(`#column-b`)));
         //await dragAndDrop($(`#column-a`), {right:215});
