@@ -6,12 +6,13 @@ const lighthouse = require('lighthouse');
 const config = require('lighthouse/lighthouse-core/config/lr-desktop-config.js');
 const ReportGenerator = require('lighthouse/lighthouse-core/report/report-generator');
 const fs = require('fs');
+const website = "bbc.co.uk";
 
 (async () => {
   try {
       //Open Browser and navigate to the page
       await openBrowser({ headless: false });
-      await goto('bbc.co.uk');
+      await goto(website);
       let url = await currentURL();
       let port = await client()
               .webSocketUrl.split('/devtools/')[0]

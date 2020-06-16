@@ -5,7 +5,7 @@ const { openBrowser, scrollDown, goto, click, $, closeBrowser, into, textBox, wr
 		await openBrowser({ headless: false });
 		await goto("https://www.rapha.cc/gb/en/");
 		
-		// Accept Cookie alert
+		//Accept Cookie alert
 		await click("Accept & close");
 		
 		//Select Men's Jerseys from the Menu

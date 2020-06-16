@@ -1,4 +1,4 @@
-const { openBrowser, goto, click, scrollDown, below, into, write, closeBrowser, textBox, screenshot } = require('taiko');
+const { openBrowser, goto, click, scrollDown, below, into, write, closeBrowser, textBox, screenshot, $ } = require('taiko');
 (async () => {
     try {
         //Open Browser and navigate to the page

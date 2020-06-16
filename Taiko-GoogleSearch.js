@@ -1,22 +1,23 @@
-// Source - https://opensourceforu.com/2020/03/add-superpowers-to-your-tests-with-taiko/
-
-const { openBrowser, goto, evaluate, closeBrowser } = require('taiko');
+const { openBrowser, goto, write, click, screenshot, closeBrowser } = require('taiko');
 (async () => {
     try {
-        //Open Browser and navigate to the page
+        //Open Browser
         await openBrowser({ headless: false });
+
+        //Navigate to the page
         await goto('google.com');
         
-        // Type "JavaScript" into the search bar
-        await evaluate(() => {document.querySelector('input[name="q"]').value = 'Gauge Taiko';});
-        await evaluate(() => {document.querySelector('input[value="Google Search"]').click();});
+        //Type "Gauge Taiko" into the text box
+        await write('Gauge Taiko');
+
+        //Click "Google Search" button
+        await click('Google Search');
         
-        // Get all the search result URLs
-        const links = await evaluate(function getUrls() {return Array.from(document.querySelectorAll('a cite').values()).map(el => el.innerHTML);});
-        console.log(links);
+        //Take a screenshot
+        await screenshot();
     } catch (error) {
         console.error(error);
     } finally {
-        await closeBrowser();
+        await closeBrowser(); //Close browser
     }
 })();

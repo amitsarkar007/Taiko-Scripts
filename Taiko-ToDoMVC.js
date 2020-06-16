@@ -1,4 +1,4 @@
-// SOURCE - https://github.com/getgauge-contrib/compareBrowserAutomationTools/blob/master/compareCostOfSelectorMaintenance/taiko/tests/activities.js
+//SOURCE - https://github.com/getgauge-contrib/compareBrowserAutomationTools/blob/master/compareCostOfSelectorMaintenance/taiko/tests/activities.js
 
 const { openBrowser,closeBrowser, goto, checkBox, click, near,into,$,textBox,hover,button, write, text, press } = require('taiko');
 const assert = require('assert');
