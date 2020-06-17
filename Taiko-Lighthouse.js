@@ -2,7 +2,7 @@
 // Performance audit of a website with Lighthouse
 
 const { openBrowser, goto, currentURL, closeBrowser, client } = require('taiko');
-const lighthouse = require('lighthouse'); 
+const lighthouse = require('lighthouse');
 const config = require('lighthouse/lighthouse-core/config/lr-desktop-config.js');
 const ReportGenerator = require('lighthouse/lighthouse-core/report/report-generator');
 const fs = require('fs');
