@@ -30,11 +30,11 @@ const { openBrowser, goto, click, $, closeBrowser, into, textBox, write, dropDow
 
 		//Enter personal details
 		await dropDown("What is your title?").select("Mr");
-        await write("Chiku", into(textBox("First name")));
-        await write("Babu", into(textBox("Last name")));
-        await dropDown("Day",toRightOf("What is your date of birth?")).select("16");
+        await write("John", into(textBox("First name")));
+        await write("Smith", into(textBox("Last name")));
+        await dropDown("Day",toRightOf("What is your date of birth?")).select("15");
         await dropDown("Month",toRightOf("What is your date of birth?")).select("October");
-        await dropDown("Year",toRightOf("What is your date of birth?")).select("1983");
+        await dropDown("Year",toRightOf("What is your date of birth?")).select("1986");
         await dropDown("Your relationship status?").select("Married");
         await click("Yes",toRightOf("Do you own your home?"));
         await click("No",toRightOf("Do you have any children under the age of 16?"));
@@ -74,7 +74,7 @@ const { openBrowser, goto, click, $, closeBrowser, into, textBox, write, dropDow
         await click("Next");
 
         //Enter account and contact details for your policy
-        await write("chikubabucb3@gmail.com", into(textBox("Email")));
+        await write("johnsmith@gmail.com", into(textBox("Email")));
         await click("No, thanks",toRightOf("Providers with the 2 lowest prices may contact you to discuss your quotes. Are you happy to be contacted?"));
         await click("Do not contact");
         await click($(`[class*=styles_Check__mark]`),toRightOf("Please tick this box to confirm you have read and understood our website"));

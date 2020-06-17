@@ -1,4 +1,5 @@
 const { openBrowser, goto, write, click, screenshot, closeBrowser } = require('taiko');
+
 (async () => {
     try {
         //Open Browser
