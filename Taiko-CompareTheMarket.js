@@ -62,7 +62,7 @@ const { openBrowser, goto, click, $, closeBrowser, into, textBox, write, dropDow
         await dropDown("What type of cover are you looking for?").select("Comprehensive");
         await click("One annual payment",toRightOf("How would you normally pay for your insurance?"));
         await dropDown("On which date within the next 30 days (including today) would you like your cover to start?").select("20 Jun");
-        await dropDown("How many years of no claims discount (NCD) do you have? This will be detailed in your latest policy documents").select("5 Years");
+        await dropDown("How many years of no claims discount (NCD) do you have?").select("5 Years");
         await click("Yes",toRightOf("Do you want to protect your no claims discount?"));
         await click("Next");
 
