@@ -41,4 +41,4 @@ WORKDIR /home/test/Downloads/Taiko-Scripts
 USER test
 
 # Run the following commands on execution
-CMD [ "/bin/bash", "taiko Taiko-GoogleSearch-Headless.js" ]
+# CMD [ "/bin/bash", "taiko Taiko-GoogleSearch-Headless.js" ]
