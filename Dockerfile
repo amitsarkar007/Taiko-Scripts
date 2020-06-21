@@ -28,11 +28,11 @@ RUN npm install -g taiko --unsafe-perm=true && \
     # Change the user and group ownership of the folder
     chown -R test:test /home/test && \
     # Change directory to Downloads folder
-    cd /home/test/Downloads/ \
+    cd /home/test/Downloads/ && \
     # Clone the Taiko scripts git repo from user @amitsarkar007
-    git clone https://github.com/amitsarkar007/Taiko-Scripts.git \
+    git clone https://github.com/amitsarkar007/Taiko-Scripts.git && \
     # Change the user and group ownership of the cloned git folder
-    chown -R test:test /home/test/Downloads/Taiko-Scripts &&
+    chown -R test:test /home/test/Downloads/Taiko-Scripts
 
 # Set the working directory
 WORKDIR /home/test/Downloads/Taiko-Scripts
