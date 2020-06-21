@@ -2,7 +2,7 @@ const { openBrowser, goto, link, click, button, closeBrowser, highlight, textBox
 (async () => {
     try {
         //Open Browser and navigate to the page
-        await openBrowser({ headless: false ,args:['--window-size=1440,1000']});
+        await openBrowser({ headless: false, args:['--window-size=1440,1000']});
         await goto('https://beta.giftli.co.uk/');
 
         // Accept Cookie alert
