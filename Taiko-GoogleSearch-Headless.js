@@ -1,4 +1,4 @@
-const { openBrowser, goto, write, click, screenshot, closeBrowser } = require('taiko');
+const { openBrowser, goto, write, click, closeBrowser } = require('taiko');
 
 (async () => {
     try {
