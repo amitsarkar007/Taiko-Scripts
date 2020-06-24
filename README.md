@@ -23,6 +23,10 @@ Using [Taiko](https://github.com/getgauge/taiko) for user journey automation.
     ```
     npm install -g lighthouse
     ```
+* [dotenv](https://www.npmjs.com/package/dotenv) - Install globally on your machine using the code
+    ```
+    npm install -g dotenv
+    ```
 
 ## How to execute
 
