@@ -1,26 +1,28 @@
-const { openBrowser, goto, click, screenshot, closeBrowser, title, highlight, text } = require('taiko');
-var titleExpected="Executive Search and Recruitment - UK & International | Odgers Berndtson";
-var titleActual;
+const { openBrowser, goto, closeBrowser, title, button, text } = require('taiko');
+var expectedTitle="Executive Search and Recruitment - UK & International | Odgers Berndtson";
+var expectedText="Industries";
+
 (async () => {
     try {
         //Open Browser
-        await openBrowser({ headless: false });
+        await openBrowser({ headless: true });
 
         //Navigate to the page
         await goto("https://www.odgersberndtson.com//en-gb");
 
-        //Get current title
-        titleActual = await title();
+        //Get actual title
+        actualTitle = await title();
 
-        //Check if current title equals expected title
-        if (titleExpected == titleActual) {console.log("PASS")}
+        //Check if actual title equals expected title
+        if (expectedTitle == actualTitle) {console.log("PASS")}
         else {console.log("FAIL")}
 
-        //Check if "Industries" exists
-        await text("Industries").exists();
-        
-        //Take a screenshot
-        await screenshot();
+        //Get actual text
+        actualText = await text(expectedText).exists();
+
+        //Check if expected text exists or not
+        if (actualText == true) {console.log(expectedText,"exists")}
+        else {console.log(expectedText, "doesn't exist")}
 
     } catch (error) {
         console.error(error);
