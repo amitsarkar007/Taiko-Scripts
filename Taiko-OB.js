@@ -1,4 +1,4 @@
-const { openBrowser, goto, closeBrowser, title, button, text } = require('taiko');
+const { openBrowser, goto, closeBrowser, title, text } = require('taiko');
 var expectedTitle="Executive Search and Recruitment - UK & International | Odgers Berndtson";
 var expectedText="Industries";
 
