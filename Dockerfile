@@ -19,9 +19,15 @@ RUN apt-get update && apt-get install -yq \
     # Create a non-privileged user in a new group
 RUN groupadd -r test && useradd -r -m -g test test && \
     # Change the user and group ownership of the folder
-    chown -R test:test /home/test && \
+    chown -R test:test /home/test/ && \
     # Install taiko
     npm install -g taiko@1.0.12 --unsafe-perm=true
+
+# Set the working directory
+WORKDIR /home/test/Taiko-Scripts/
+
+# Change the user and group ownership of the folder
+RUN chown -R test:test /home/test/Taiko-Scripts/
 
 # Create new image from the previous base image
 FROM builder
@@ -29,10 +35,8 @@ FROM builder
 # User as test
 USER test
 
-# Set the working directory
-WORKDIR /home/test/Taiko-Scripts/
-
-COPY . /home/test/Taiko-Scripts/
+# Copy everything from local folder into working directory
+COPY --chown=test:test . .
 
 # Run the following commands on execution
 CMD taiko Taiko-GoogleSearch-Headless.js
