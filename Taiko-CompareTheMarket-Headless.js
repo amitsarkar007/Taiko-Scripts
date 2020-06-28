@@ -1,4 +1,4 @@
-const { openBrowser, goto, click, $, closeBrowser, into, textBox, write, dropDown, toRightOf } = require('taiko');
+const { openBrowser, goto, click, $, closeBrowser, into, textBox, write, dropDown, toRightOf, text } = require('taiko');
 (async () => {
     try {
 		//Open Browser in headless mode
@@ -16,8 +16,8 @@ const { openBrowser, goto, click, $, closeBrowser, into, textBox, write, dropDow
 		//Select car insurance
 		await click("Car insurance");
 		
-		//Enter vehicle registration number
-		await write("MK56GMG");
+        //Enter vehicle registration number
+        await write("MK56GMG", into(textBox(toRightOf("Then please enter it here to get started:"))));
         await click("Find vehicle");
 
         //Enter vehicle value
@@ -46,8 +46,8 @@ const { openBrowser, goto, click, $, closeBrowser, into, textBox, write, dropDow
         await dropDown("Your relationship status?").select("Married");
         await click("Yes",toRightOf("Do you own your home?"));
         await click("No",toRightOf("Do you have any children under the age of 16?"));
-        await write("55", into(textBox("What is the house number/name")));
-        await write("BR3 4AS", into(textBox("What is the postcode")));
+        await write("20", into(textBox("What is the house number/name?")));
+        await write("HA9 0RS",into(textBox(toRightOf("What is the postcode?"))));
         await click("Find my address");
         await dropDown("What is your employment status?").select("Self-Employed");
         await write("Software", into(textBox("What do you do for a living?")));
@@ -69,12 +69,13 @@ const { openBrowser, goto, click, $, closeBrowser, into, textBox, write, dropDow
         //Enter policy details
         await dropDown("What type of cover are you looking for?").select("Comprehensive");
         await click("One annual payment",toRightOf("How would you normally pay for your insurance?"));
-        await dropDown("On which date within the next 30 days (including today) would you like your cover to start?").select("20 Jun");
+        await dropDown("On which date within the next 30 days (including today) would you like your cover to start?").select("10 Jul");
         await dropDown("How many years of no claims discount (NCD) do you have?").select("5 Years");
         await click("Yes",toRightOf("Do you want to protect your no claims discount?"));
         await click("Next");
 
         //Enter additional products and features to your policy
+        await text("Personal accident cover").exists();
         await click("Yes",toRightOf("Personal accident cover"));
         await click("No/I'll decide later",toRightOf("Courtesy car"));
         await click("Yes",toRightOf("Breakdown cover"));
