@@ -7,13 +7,13 @@ const { openBrowser, goto, write, click, screenshot, closeBrowser } = require('t
 
         //Navigate to the page
         await goto('google.com');
-        
+
         //Type "Gauge Taiko" into the text box
         await write('Gauge Taiko');
 
         //Click "Google Search" button
         await click('Google Search');
-        
+
         //Take a screenshot
         await screenshot();
     } catch (error) {

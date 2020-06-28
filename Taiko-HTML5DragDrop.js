@@ -3,9 +3,9 @@ async function html5dragAndDrop(source, target) {
   await evaluate((_, args) => {
     const sourceElement = document.querySelector(args.source);
     const targetElement = document.querySelector(args.target);
-    
+
     const dataTransfer = new DataTransfer();
-  
+
     const dragStartEvent = document.createEvent("CustomEvent");
     dragStartEvent.dataTransfer = dataTransfer;
     dragStartEvent.initCustomEvent("dragstart", true, true, null);

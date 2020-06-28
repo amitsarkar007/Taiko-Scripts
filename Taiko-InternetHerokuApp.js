@@ -3,18 +3,18 @@ const { openBrowser, goto, clearHighlights, tableCell, press, click, below, clos
     try {
         //Open a browser
         await openBrowser({ headless: false });
-        
+
         //Basic authentication
         await prompt("Username", async () => await accept("admin")); 
         await prompt("Password", async () => await accept("admin")); 
         await goto("https://the-internet.herokuapp.com/basic_auth",{headers:{'Authorization':'Basic YWRtaW46YWRtaW4='}});
-        
+
         //Highlight different elements in a table
         await goto("https://the-internet.herokuapp.com/challenging_dom");
         await highlight(tableCell({row:3, col:2}));
         await highlight(tableCell({row:6, col:2}));
         await clearHighlights();
-        
+
         // Select an option from a Dropdown
         await goto("https://the-internet.herokuapp.com/dropdown");
         await dropDown({id:"dropdown"}).select("Option 2");
@@ -49,7 +49,7 @@ const { openBrowser, goto, clearHighlights, tableCell, press, click, below, clos
         await goto("https://the-internet.herokuapp.com/inputs");
         await write("7",into($(`[type=number]`)));
         await press(["ArrowUp","ArrowUp"]);
-        
+
         //Hover over different images
         await goto("https://the-internet.herokuapp.com/hovers");
         await hover(image("User Avatar"));
@@ -66,7 +66,7 @@ const { openBrowser, goto, clearHighlights, tableCell, press, click, below, clos
         await goto("https://the-internet.herokuapp.com/windows");
         await click("Click Here");
         await closeTab();
-        
+
         //Highlight different Shadow DOM
         await goto("https://the-internet.herokuapp.com/shadowdom");
         await highlight(`Let's`);
@@ -78,7 +78,7 @@ const { openBrowser, goto, clearHighlights, tableCell, press, click, below, clos
         await click("click here");
         await click("click here",near("shift",{offset:100}));
         await click("click here",near("simple",{offset:100}));
-        
+
         //Highlight table cells
         await goto("https://the-internet.herokuapp.com/tables");
         await highlight(tableCell({row:3, col:2}));

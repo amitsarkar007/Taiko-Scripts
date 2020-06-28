@@ -25,7 +25,7 @@ const { openBrowser, goto, textBox, into, write, button, click, text, $, closeBr
 
         // Verify Upload is successful
         if (await text("Upload Complete").exists()) {await console.log("Upload Complete");}
-        
+
         // Continue to profile page
         await click("Continue")
 

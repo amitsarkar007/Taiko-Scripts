@@ -14,7 +14,7 @@ const assert = require('assert');
           assert.ok(await text('1 item left').exists());
           await click($("#toggle-all"));
           await click("Clear completed");
-          
+
           //Open Browser and navigate to the page
           await write('Complete Task',into(textBox({placeholder:"What needs to be done?"})));
           await press('Enter')
@@ -25,7 +25,7 @@ const assert = require('assert');
           assert.ok(await text('0 items left').exists());
           await click('Active')
           assert.ok(!(await text('Complete Task').exists()));
-          
+
           //Open Browser and navigate to the page
           await write('Completed Task',into(textBox({placeholder:"What needs to be done?"})));
           await press('Enter')
@@ -36,7 +36,7 @@ const assert = require('assert');
           assert.ok(await text('0 items left').exists());
           await click('Active')
           assert.ok(!(await text('Completed Task').exists()));
-          
+
           //Open Browser and navigate to the page
           await write('Complete Task',into(textBox({placeholder:"What needs to be done?"})));
           await press('Enter')
@@ -47,7 +47,7 @@ const assert = require('assert');
           assert.ok(await text('0 items left').exists());
           await click('Active')
           assert.ok(!(await text('Complete Task').exists()));
-          
+
           //Open Browser and navigate to the page
           await write('Clear Task',into(textBox({placeholder:"What needs to be done?"})));
           await press('Enter')
@@ -56,7 +56,7 @@ const assert = require('assert');
           assert.ok(await text('0 items left').exists());
           await click('Clear completed')
           assert.ok(!(await text('Clear Task').exists()));
-          
+
           //Open Browser and navigate to the page
           await write('Remove Task',into(textBox({placeholder:"What needs to be done?"})));
           await press('Enter')
@@ -64,7 +64,7 @@ const assert = require('assert');
           await hover("Remove Task");
           await click(button({class:"destroy"}));
           assert.ok(!(await text('Remove Task').exists()));
-	} catch (error) {
+    } catch (error) {
         console.error(error);
     } finally {
         await closeBrowser();

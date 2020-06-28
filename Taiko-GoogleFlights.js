@@ -8,17 +8,18 @@ const return_date = "31 Aug" ;
 
 (async () => {
     try {
-		//Open Browser and navigate to the page
-		await openBrowser({ headless: false ,args:['--window-size=1440,1200']});
-		await goto("https://www.google.co.uk/flights");
-		
-		//Enter origin and destination airport
+        //Open Browser and navigate to the page
+        await openBrowser({ headless: false ,args:['--window-size=1440,1200']});
+        await goto("https://www.google.co.uk/flights");
+
+        //Enter origin and destination airport
         await waitFor( async () => await $(`[data-flt-ve=origin_airport]`).isVisible());
         await click($(`[data-flt-ve=origin_airport]`));
         await write(origin_airport, into(textBox({placeholder:"Where from?"})));
         await click("All airports");
         await waitFor( async () => await $(`[data-flt-ve=destination_airport]`).isVisible());
         await press("Tab");
+
         //await evaluate($(`[data-flt-ve=destination_airport]`),(elem) => elem.click());
         await write(destination_airport);//, into(textBox({placeholder:"Where to?"})));
         await click("All airports");
@@ -36,8 +37,8 @@ const return_date = "31 Aug" ;
         await click("Bags");
         await click($(`[aria-label=Increase]`));
         await press("Escape");
-        
-		//Select stops
+
+        //Select stops
         await click("Stops");
         await click("No stops only");
         await press("Escape");
@@ -51,11 +52,11 @@ const return_date = "31 Aug" ;
         await click("Times");
         await click("No stops only");
         await press("Escape");
-        
-		//Take screenshot of all flight options
+
+        //Take screenshot of all flight options
         await screenshot({fullPage:true});
 
-	} catch (error) {
+    } catch (error) {
         console.error(error);
     } finally {
         await closeBrowser();

@@ -10,8 +10,8 @@ const return_date = "14";
 
 (async () => {
     try {
-		//Open browser and navigate to the page
-		await openBrowser({ headless: false });
+        //Open browser and navigate to the page
+        await openBrowser({ headless: false });
         await goto("https://www.skyscanner.net/");
 
         //Accept cookie alert
@@ -51,15 +51,15 @@ const return_date = "14";
         await click($(`.bpk-nudger__icon`),below("Children"),toRightOf("0"));
         await dropDown(below("Age of child 1")).select("5");
         await click("Done");
-        
+
         //Search available flights
         await click("Search flights");
-        
+
         //Take screenshot of all flight options
         await scrollDown(1000)
         await screenshot({fullPage:true});
 
-	} catch (error) {
+    } catch (error) {
         console.error(error);
     } finally {
         await closeBrowser();

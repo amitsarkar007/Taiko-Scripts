@@ -7,7 +7,7 @@ const { openBrowser, goto, click, scrollDown, below, into, write, closeBrowser, 
 
         //Accept cookie alert on the page and wait for page to reload
         await click('OK',{waitForEvents:['DOMContentLoaded']});
-        
+
         //Select Fibre Broadband from the menu
         await click('Broadband');
         await click('Fibre broadband',{waitForEvents:['DOMContentLoaded']});

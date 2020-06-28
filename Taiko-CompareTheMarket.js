@@ -1,23 +1,23 @@
 const { openBrowser, goto, click, $, closeBrowser, into, textBox, write, dropDown, toRightOf, screenshot, text } = require('taiko');
 (async () => {
     try {
-		//Open Browser and navigate to the page
-		await openBrowser({ headless: false });
-		await goto("https://www.comparethemarket.com/");
-		
-		//Select car insurance
-		await click("Car insurance");
-		
-		//Enter vehicle registration number
-		await write("MK56GMG", into(textBox(toRightOf("Then please enter it here to get started:"))));
+        //Open Browser and navigate to the page
+        await openBrowser({ headless: false });
+        await goto("https://www.comparethemarket.com/");
+
+        //Select car insurance
+        await click("Car insurance");
+
+        //Enter vehicle registration number
+        await write("MK56GMG", into(textBox(toRightOf("Then please enter it here to get started:"))));
         await click("Find vehicle");
 
         //Enter vehicle value
         await clear(textBox("Do you know the current value of the car?"));
-		await write("3000", into(textBox("Do you know the current value of the car?")));
-		await click("Next");
+        await write("3000", into(textBox("Do you know the current value of the car?")));
+        await click("Next");
 
-		//Enter vehicle usage
+        //Enter vehicle usage
         await dropDown("Month").select("January");
         await dropDown("Year").select("2020");
         await click("Social, domestic, pleasure and commuting (SDPC)");
@@ -28,8 +28,8 @@ const { openBrowser, goto, click, $, closeBrowser, into, textBox, write, dropDow
         await dropDown("Do you use any other vehicles? (eg: company car, partner's car, etc)").select("No access to any other vehicles");
         await click("Next");
 
-		//Enter personal details
-		await dropDown("What is your title?").select("Mr");
+        //Enter personal details
+        await dropDown("What is your title?").select("Mr");
         await write("John", into(textBox("First name")));
         await write("Smith", into(textBox("Last name")));
         await dropDown("Day",toRightOf("What is your date of birth?")).select("15");
@@ -81,10 +81,10 @@ const { openBrowser, goto, click, $, closeBrowser, into, textBox, write, dropDow
         await click($(`[class*=styles_Check__mark]`),toRightOf("Please tick this box to confirm you have read and understood our website"));
         await click("Next");
 
-		//Take screenshot of Summary of policy
+        //Take screenshot of Summary of policy
         await screenshot({fullPage:true});
 
-	} catch (error) {
+    } catch (error) {
         console.error(error);
     } finally {
         await closeBrowser();
