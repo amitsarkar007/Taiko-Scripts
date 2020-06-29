@@ -1,4 +1,4 @@
-const { openBrowser, scrollDown, goto, click, $, closeBrowser, into, textBox, write, dropDown, evaluate, button, waitFor } = require('taiko');
+const { openBrowser, scrollDown, goto, click, $, text, closeBrowser, into, textBox, write, dropDown, evaluate, button, waitFor } = require('taiko');
 (async () => {
     try {
         //Open Browser and navigate to the page
@@ -10,6 +10,7 @@ const { openBrowser, scrollDown, goto, click, $, closeBrowser, into, textBox, wr
 
         //Select Men's Jerseys from the Menu
         await click("Men");
+        await text("Jerseys").exists()
         await click("Jerseys");
 
         //Filter the Jerseys based on size
@@ -28,6 +29,7 @@ const { openBrowser, scrollDown, goto, click, $, closeBrowser, into, textBox, wr
         await click('Add to Basket');
 
         //Go to the basket and checkout as a guest
+        await text("Go to Basket").exists()
         await click('Go to Basket');
         await click('Checkout');
         await click("Guest Checkout",{waitForEvents:['DOMContentLoaded']});

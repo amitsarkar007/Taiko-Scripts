@@ -1,6 +1,7 @@
-//Script still in progress.
+//Script still in progress. Skyscanner detects that its an automated bot.
+//And shows reCAPTCHA
 
-const { openBrowser, goto, click, $, closeBrowser, textBox, button, below, write, screenshot, dropDown, checkBox, toRightOf, scrollDown } = require('taiko');
+const { openBrowser, goto, click, $, closeBrowser, textBox, button, below, write, screenshot, dropDown, checkBox, toRightOf, waitFor, text, currentURL } = require('taiko');
 const origin_airport = "Berlin";
 const destination_airport = "Paris";
 const departure_month = "November 2020";
@@ -42,7 +43,7 @@ const return_date = "14";
 
         //Select class of travel
         await click(button(),below("Cabin Class & Travellers"));
-        await dropDown(below("Cabin class")).select("First class");
+        await dropDown(below("Cabin class")).select("Premium Economy");
 
         //Select adults travelling
         await click($(`.bpk-nudger__icon`),below("Adults"),toRightOf("1"));
@@ -55,8 +56,13 @@ const return_date = "14";
         //Search available flights
         await click("Search flights");
 
+        //Wait for Search Results
+        await waitFor (async () => await text("results (show all)").isVisible());
+
+        //Get URL of page
+        await console.log(await currentURL());
+
         //Take screenshot of all flight options
-        await scrollDown(1000)
         await screenshot({fullPage:true});
 
     } catch (error) {

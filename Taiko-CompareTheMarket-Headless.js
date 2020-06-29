@@ -1,3 +1,6 @@
+// Script won't work as a Captcha appears while executing this code
+// Reference - https://github.com/getgauge/taiko/issues/1338
+
 const { openBrowser, goto, click, $, closeBrowser, into, textBox, write, dropDown, toRightOf, text } = require('taiko');
 (async () => {
     try {
