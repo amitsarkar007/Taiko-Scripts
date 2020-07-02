@@ -1,7 +1,7 @@
 // Use .env variables
 require('dotenv').config()
 
-const { openBrowser, goto, textBox, into, write, button, click, text, $, closeBrowser, toRightOf } = require('taiko');
+const { openBrowser, goto, textBox, into, write, button, click, fileField, to, closeBrowser, toRightOf } = require('taiko');
 (async () => {
     try {
         // Open browser and navigate to page
@@ -20,16 +20,11 @@ const { openBrowser, goto, textBox, into, write, button, click, text, $, closeBr
         await goto("https://www.jobserve.com/gb/en/Candidate/CandidateQuickPostResume.aspx?origin=resumes");
 
         //Upload CV
-        //await attach(process.env.JOB_CV, $(`[type=file]`));
-        //await attach(process.env.JOB_CV, to(fileField($(`[type=file]`,{selectHiddenElement: true}))));
-        //await attach(process.env.JOB_CV,$(`#LocalCVFile`,{selectHiddenElement: true}))
+        await attach(process.env.JOB_CV, to(fileField({id: 'LocalCVFile'}, {selectHiddenElements : true})));
         await click(button("Upload Now"));
 
-        // Verify Upload is successful
-        if (await text("Upload Complete").exists()) {await console.log("Upload Complete");}
-
-        // Sign out
-        await click("Sign Out")
+        //Alternative method to sign out
+        await goto("https://www.jobserve.com/gb/en/logout.aspx");
 
     } catch (error) {
         console.error(error);

@@ -20,7 +20,7 @@ const { openBrowser, goto, clearHighlights, tableCell, press, click, below, clos
         await dropDown({id:"dropdown"}).select("Option 2");
 
         //Drag and drop an element from one location to another
-        // Issue - https://github.com/getgauge/taiko/issues/279
+        //Issue - https://github.com/getgauge/taiko/issues/279
         //await goto("https://the-internet.herokuapp.com/drag_and_drop");
         //await dragAndDrop($(`#column-a`), into($(`#column-b`)));
         //await dragAndDrop($(`#column-a`), {right:215});
@@ -56,12 +56,12 @@ const { openBrowser, goto, clearHighlights, tableCell, press, click, below, clos
         await hover(image("User Avatar",toRightOf(image("User Avatar"))));
         await hover(image("User Avatar",toRightOf(image("User Avatar",toRightOf(image("User Avatar"))))));
 
-        //Move the slider 
-        //Issue raised - https://github.com/getgauge/taiko/issues/1280
-        //await goto("https://the-internet.herokuapp.com/horizontal_slider");
-        //await range
+        //Move the slider
+        await goto("https://the-internet.herokuapp.com/horizontal_slider");
+        await range().select("3.5");
+        await range(below("Horizontal Slider")).select("2");
 
-        //Open and close a new Tab 
+        //Open and close a new Tab
         //Issue raised - https://github.com/getgauge/taiko/issues/1285
         await goto("https://the-internet.herokuapp.com/windows");
         await click("Click Here");
