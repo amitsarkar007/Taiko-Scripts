@@ -23,7 +23,7 @@ const { openBrowser, goto, textBox, into, write, button, click, fileField, to, c
         await attach(process.env.JOB_CV, to(fileField({id: 'LocalCVFile'}, {selectHiddenElements : true})));
         await click(button("Upload Now"));
 
-        //Alternative method to sign out
+        //Sign out
         await goto("https://www.jobserve.com/gb/en/logout.aspx");
 
     } catch (error) {
