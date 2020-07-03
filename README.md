@@ -19,14 +19,23 @@ Using [Taiko](https://github.com/getgauge/taiko) for user journey automation.
     ```
     npm install -g taiko
     ```    
-* [Lighthouse](https://www.npmjs.com/package/lighthouse) - Install globally on your machine using the code
+* [Lighthouse](https://www.npmjs.com/package/lighthouse) - This is for generating Google Lighthouse reports. Install globally on your machine using the code below.
     ```
     npm install -g lighthouse
     ```
-* [dotenv](https://www.npmjs.com/package/dotenv) - Install globally on your machine using the code
+* [dotenv](https://www.npmjs.com/package/dotenv) - This is for using variables in your code. Install globally on your machine using the code below.
     ```
     npm install -g dotenv
     ```
+* [Taiko Screencast plugin](https://www.npmjs.com/package/taiko-screencast) - This is for creating a gif for your code execution. Install globally on your machine using the code below.
+    ```
+    npm install -g taiko-screencast
+    ```    
+
+* [Taiko Diagnostics plugin](https://www.npmjs.com/package/taiko-diagnostics) - This provides some diagnostics features like measuring speedindex, performance metrics of webpage. Install globally on your machine using the code below.
+    ```
+    npm install -g taiko-screencast
+    ```    
 
 ## How to execute
 
@@ -38,6 +47,24 @@ Using [Taiko](https://github.com/getgauge/taiko) for user journey automation.
     ```
     taiko <full file path with filename>
     ```
+
+## How to execute with plugin
+
+* Type the following in your terminal if you are executing the code from the **folder in which the script exists**
+    ```
+    taiko <filename> --plugin <plugin name>
+    ```
+* Type the following in your terminal if you are executing the code from the **folder in which the script doesn't exist**
+    ```
+    taiko <full file path with filename> --plugin <plugin name>
+    ```
+
+## How to use environment variables
+* Variables you can use - [Taiko environment variables](https://docs.taiko.dev/#taiko-env-variables)
+* How to use variables - [Set an Environment Variable in Windows - GUI](http://www.dowdandassociates.com/blog/content/howto-set-an-environment-variable-in-windows-gui/)
+* Screenshot for reference below -<br>
+![envVariable](/envVariable.png)
+
 ## Code execution demo on YouTube
 * [Rapha.cc](https://www.youtube.com/watch?v=0ErzwZyZDgY) - _Taiko-Rapha.js_
 * [BT.com](https://www.youtube.com/watch?v=-orYOGBYRQc) - _Taiko-BT.js_
