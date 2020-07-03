@@ -183,6 +183,9 @@ Using [Taiko](https://github.com/getgauge/taiko) for user journey automation.
      ✔ Clicked element matching text "Confirm address" 1 times
      ✔ Browser closed
     ```
+## Remove all docker resources
+
+Clean all docker images/containers/volumes using this [bash script](https://gist.github.com/rafaelaazevedo/bec6cf339888bbac60336d01193ae923) by [Rafaela Azevedo](https://github.com/rafaelaazevedo)
 
 ## Syntax help
 [Taiko documentation](https://docs.taiko.dev/)
