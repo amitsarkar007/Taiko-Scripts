@@ -64,6 +64,10 @@ Using [Taiko](https://github.com/getgauge/taiko) for user journey automation.
 * How to use variables - [Set an Environment Variable in Windows - GUI](http://www.dowdandassociates.com/blog/content/howto-set-an-environment-variable-in-windows-gui/)
 * Screenshot for reference below -<br>
 ![envVariable](/envVariable.png)
+* Alternatively try this command on Windows<br>
+    ```
+    setx <variable name> "value"
+    ```
 
 ## Code execution demo on YouTube
 * [Rapha.cc](https://www.youtube.com/watch?v=0ErzwZyZDgY) - _Taiko-Rapha.js_
