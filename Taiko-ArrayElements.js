@@ -1,6 +1,4 @@
-//Inspiration - https://spectrum.chat/taiko/general/how-to-click-each-element-in-a-elements-collection~df1cf523-f2f5-4e6f-a669-4229fb10deac
-
-const { openBrowser, goto, text, closeBrowser } = require('taiko');
+const { openBrowser, goto, text, closeBrowser, evaluate } = require('taiko');
 var searchText = "admin";
 (async () => {
     try {
@@ -13,6 +11,16 @@ var searchText = "admin";
         //Enter text in a textbox
         await write(searchText,into(textBox({placeholder:"Search"})));
 
+        //Some ChromeDevConsole commands to identify the table elements
+        //document.querySelectorAll(".smart-table-data-cell")
+        //document.getElementsByClassName("smart-table-data-row ng-scope").length
+        //document.querySelector("tbody").children;
+        //document.querySelectorAll("tbody > tr > td");
+        //document.querySelectorAll("thead > tr > th");
+        //document.getElementsByTagName("tr");
+        //document.querySelectorAll("tbody > tr:nth-child(1) > td:nth-child(11)");
+        //document.querySelectorAll("tbody > tr:nth-child(1) > td");
+
         //Store each occurrence of text in an array
         var textArray = await text(searchText).elements();
 
@@ -21,8 +29,9 @@ var searchText = "admin";
             console.log(await e.text());
         }
 
-        //Display array length on console
-        console.log(textArray.length);
+        //Display how many times the text occurs on console
+        console.log("The text",searchText,"occurs",textArray.length,"times in the table.");
+
     } catch (error) {
         console.error(error);
     } finally {

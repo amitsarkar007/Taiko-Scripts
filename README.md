@@ -37,6 +37,12 @@ Using [Taiko](https://github.com/getgauge/taiko) for user journey automation.
     npm install -g taiko-screencast
     ```    
 
+## Check installed node packages
+
+```
+npm list -g --depth 0
+```
+
 ## How to execute
 
 * Type the following in your terminal if you are executing the code from the **folder in which the script exists**
