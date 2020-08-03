@@ -28,9 +28,9 @@ const { openBrowser, goto, click, scrollDown, below, into, write, closeBrowser, 
         await click('Add and continue', below('Fibre 2'));
 
         //Enter postcode and confirm address to check for availability
-        await write('BR3 4AS', into(textBox('Postcode')));
+        await write('BR3 4AS', into(textBox(below(text('Postcode')))));
         await click('Check availability');
-        await click($(`//*[contains(text(),'55')]`));
+        await click(button("55 Eden Road"));
         await click('Confirm address',{waitForEvents:['DOMContentLoaded']});
 
     } catch (error) {
