@@ -34,7 +34,7 @@ Using [Taiko](https://github.com/getgauge/taiko) for user journey automation.
 
 * [Taiko Diagnostics plugin](https://www.npmjs.com/package/taiko-diagnostics) - This provides some diagnostics features like measuring speedindex, performance metrics of webpage. Install globally on your machine using the code below.
     ```
-    npm install -g taiko-screencast
+    npm install -g taiko-diagnostics
     ```    
 
 ## Check installed node packages
