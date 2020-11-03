@@ -6,7 +6,10 @@ const { openBrowser, goto, textBox, into, write, button, click, text, $, closeBr
     try {
         // Open browser and navigate to page
         await openBrowser({ headless: false });
-        await goto("www.reed.co.uk/account/signin#signin",{waitForEvents:['DOMContentLoaded']});
+        await goto("www.reed.co.uk/account/signin",{waitForEvents:['DOMContentLoaded']});
+
+        //Accept Cookies
+        await click(button("Accept cookies"));
 
         // Enter username and password and sign in
         await write(process.env.JOB_USERNAME,into(textBox("Email")));
@@ -14,7 +17,7 @@ const { openBrowser, goto, textBox, into, write, button, click, text, $, closeBr
         await click(button("Sign in"));
 
         // Navigate to profile page
-        await goto("www.reed.co.uk/account/",{waitForEvents:['DOMContentLoaded']});
+        await goto("www.reed.co.uk/account/");
 
         // Navigate to page to upload CV
         await click("Update CV");
