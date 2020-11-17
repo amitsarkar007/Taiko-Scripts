@@ -1,5 +1,5 @@
 # Create base image from nodejs on Docker hub
-FROM node:12.18.3-stretch-slim AS builder
+FROM node:14.15.1-stretch-slim AS builder
 
 # Maintainer
 LABEL maintainer="Amit Sarkar"
@@ -21,7 +21,7 @@ RUN groupadd -r test && useradd -r -m -g test test && \
     # Change the user and group ownership of the folder
     chown -R test:test /home/test/ && \
     # Install taiko
-    npm install -g taiko@1.0.21 --unsafe-perm=true
+    npm install -g taiko@1.0.28 --unsafe-perm=true
 
 # Set the working directory
 WORKDIR /home/test/Taiko-Scripts/
