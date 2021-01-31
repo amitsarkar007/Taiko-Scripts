@@ -10,7 +10,7 @@ const { openBrowser, goto, click, textBox, into, write, button, fileField, to, a
         await goto("https://www.totaljobs.com/account/signin");
 
         // Accept cookies
-        await click("I Accept");
+        await click("Accept");
 
         // Enter username and password and sign in
         await write(process.env.JOB_USERNAME,into(textBox("Email")));
