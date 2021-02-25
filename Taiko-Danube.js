@@ -5,7 +5,7 @@ const { openBrowser, goto, click, closeBrowser, textBox } = require('taiko');
         await openBrowser({ headless: true});
         await goto('https://danube-webshop.herokuapp.com/');
 
-        // Accept Cookie alert
+        // Click log in button
         await click("Log In");
 
         // Enter user credentials
