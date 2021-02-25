@@ -2,7 +2,7 @@ const { openBrowser, goto, click, closeBrowser, textBox } = require('taiko');
 (async () => {
     try {
         // Open Browser and navigate to the page
-        await openBrowser({ headless: false, args:['--window-size=1440,1000']});
+        await openBrowser({ headless: true});
         await goto('https://danube-webshop.herokuapp.com/');
 
         // Accept Cookie alert
